@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+
+    <body>
+        <main>
+            <section id="accueil">
+                <header>
+                    <h1>Gallery d'Art</h1>
+                </header>
+                <aside>
+                    <article>
+                        <h2>Liste des Gallery :</h2>
+                        <nav>
+                            <a href="#gallery" class="button"><i class="fab fa-slack-hash"></i> Exposition Miniature</a>
+                            <a href="#" class="button"><i class="fab fa-slack-hash"></i> Other Button</a>
+                            <a href="#" class="button"><i class="fab fa-slack-hash"></i> Other Button</a>
+                            <a href="#" class="button"><i class="fab fa-slack-hash"></i> Other Button</a>
+                        </nav>
+                    </article>
+                </aside>
+            </section>
+
+            <section id="gallery">
+                <aside>
+                    <h1>Exposition Miniature</h1>
+                    <p>Voici les oeuvres d'art en exposition.</p>
+                    <p>
+                        <a href="#accueil" class="button"><i class="fas fa-arrow-up"></i> Retournez dans le Menu</a>
+                    </p>
+                </aside>
+                <figure>
+                    <?php foreach ($listImages as $imageUrl) { ?>
+                        <img src='<?php echo checkThumbnailExist($imageUrl, thumbnailWidth, thumbnailHeight) ?>' alt="gallery">
+                    <?php } ?>
+                </figure>
+            </section>
+
+            <div id="image-fullscreen">
+                <span id="imgSelectedClose">&times;</span>
+                <img id="imgSelected">
+            </div>
+        </main>
+
+        <script src="https://kit.fontawesome.com/2d47ba03ce.js" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
